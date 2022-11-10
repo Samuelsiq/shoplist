@@ -13,4 +13,8 @@ export class ShoppingListService {
     getIngredients(){
         return this.ingredients.slice();
     }
+    onIngredientAddedAr(ingredients: Ingredients[]){
+        this.ingredients.push(...ingredients);
+        this.inChanged.emit(this.ingredients.slice());
+    }
 }
